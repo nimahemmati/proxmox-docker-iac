@@ -36,7 +36,7 @@ jobs:
 
       - name: Deploy with Docker Compose
         run: |
-          docker --context ${{ env.DOCKER_CONTEXT_NAME }} compose -f ${{ env.DOCKER_COMPOSE_FILE }} \
+          docker --context ${{ env.DOCKER_CONTEXT_NAME }} compose --file ${{ env.DOCKER_COMPOSE_FILE }} \
             --project-name ${{ env.DOCKER_PROJECT_NAME }} up -d --remove-orphans --force-recreate
 
       - name: Cleanup Docker context
